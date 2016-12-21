@@ -6,8 +6,15 @@
  ************************************************************************/
 
 #include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
 
 int main(int argc, char *argv[])
 {
+	if (getuid() != 0)
+	{
+		printf("not root start!\n");
+		return 0;
+	}
 	return 0;
 }
